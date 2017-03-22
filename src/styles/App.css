@@ -34,3 +34,30 @@ body {
   border-width: 1px 0;
   background: #666;
 }
+
+.alice-uploads-enter {
+    opacity: 0.01;
+}
+
+.alice-uploads-enter.alice-uploads-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.alice-uploads-leave {
+    opacity: 1;
+}
+
+.alice-uploads-leave.alice-uploads-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+}
+
+.alice-uploads-appear {
+    opacity: 0.01;
+}
+
+.alice-uploads-appear.alice-uploads-appear-active {
+    opacity: 1;
+    transition: opacity .5s ease-in;
+}
