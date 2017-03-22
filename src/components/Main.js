@@ -2,6 +2,7 @@ require('normalize.css/normalize.css');
 require('styles/App.css');
 
 import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 let imgextensions = ["ani","bmp","cal","fax","gif","img","jbg","jpe","jpeg","jpg","mac","pbm","pcd","pcx","pct","pgm","png","ppm","psd","ras","tga","tiff","wmf"]
 
@@ -42,7 +43,14 @@ class AppComponent extends React.Component {
   render() {
     return (
       <div className="index">
-        <img className="animate fadeInUp" src={this.state.img} alt="Yeoman Generator" />
+	<ReactCSSTransitionGroup
+      transitionName="alice-uploads"
+      transitionAppear={true}
+      transitionAppearTimeout={500}
+      transitionEnter={true}
+      transitionLeave={false}>
+	<img src={this.state.img} key={this.state.img} alt="Yeoman Generator" />
+	</ReactCSSTransitionGroup>
       </div>
     );
   }
