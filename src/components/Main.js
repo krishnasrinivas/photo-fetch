@@ -34,7 +34,7 @@ class AppComponent extends React.Component {
 	return false
       }).length === 0) return
       this.setState({
-	img: `http://147.75.201.195:9000/${record.s3.bucket.name}/${newFile}`
+	img: `http://147.75.201.195:9000/${record.s3.bucket.name}/${record.s3.object.key}`
       })
       console.log(record)
     })
@@ -42,7 +42,7 @@ class AppComponent extends React.Component {
   render() {
     return (
       <div className="index">
-        <img src={this.state.img} alt="Yeoman Generator" />
+        <img className="animate fadeInUp" src={this.state.img} alt="Yeoman Generator" />
       </div>
     );
   }
